@@ -1,11 +1,7 @@
-# Welcome to [Slidev](https://github.com/slidevjs/slidev)!
+# TDD in Bowling Game Kata
 
-To start the slide show:
+## Overview
+Welcome to the "From Gutter to Great: TDD in the Bowling Game Kata" presentation. This presentation aims to guide you through the principles and practices of Test-Driven Development (TDD) using the Bowling Game Kata as a practical example.
 
-- `npm install`
-- `npm run dev`
-- visit <http://localhost:3030>
-
-Edit the [slides.md](./slides.md) to see the changes.
-
-Learn more about Slidev at the [documentation](https://sli.dev/).
+## Resources
+* [The Bowling Game Kata](http://butunclebob.com/ArticleS.UncleBob.TheBowlingGameKata)

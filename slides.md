@@ -5,7 +5,7 @@ theme: eloc
 # like them? see https://unsplash.com/collections/94734566/slidev
 # background: https://cover.sli.dev
 # some information about your slides (markdown enabled)
-title: "TDD: Test Driven Development"
+title: "TDD in Bowling Game Kata"
 info: |
   ## TDD introduction
   Test first, code less.
