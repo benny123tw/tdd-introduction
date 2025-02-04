@@ -30,11 +30,13 @@ highlighter: shiki
 hideInToc: true
 ---
 
-# TDD: 測試驅動
+<h3 bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text>From Gutter to Great:<br />
+  <span color-gray italic>
+    <span color-orange>TDD</span> in the <span color-orange v-mark="{at: 1, color: 'orange', type: 'underline'}">Bowling Game Kata</span>
+  </span>
+</h3>
 
-我的測試不可能這麼完美
-
-<div class="absolute text-gray bottom-10">
+<div class="absolute text-gray bottom-10 right-0">
   <span class="font-500 text-md">
     Benny 02/07/2025
   </span>
