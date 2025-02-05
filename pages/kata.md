@@ -1,6 +1,8 @@
 ---
-title: 'Kata'
+title: 'The Kata'
 ---
+
+#### The Bowling Game Kata
 
 ![Scoring Bowling](/scores.png)
 
@@ -9,12 +11,12 @@ The game consists of 10 frames as shown above.  In each frame the player has
 two opportunities to knock down 10 pins.  The score for the frame is the total
 number of pins knocked down, plus bonuses for strikes and spares.
 
-A spare is when the player knocks down all 10 pins in two tries.  The bonus for
-that frame is the number of pins knocked down by the next roll.  So in frame 3
+A spare is when the player knocks down all 10 pins in two tries. The bonus for
+that frame is the number of pins knocked down by the next roll. So in frame 4
 above, the score is 10 (the total number knocked down) plus a bonus of 5 (the
 number of pins knocked down on the next roll.)
 
-A strike is when the player knocks down all 10 pins on his first try.  The bonus
+A strike is when the player knocks down all 10 pins on his first try. The bonus
 for that frame is the value of the next two balls rolled.
 
 In the tenth frame a player who rolls a spare or strike is allowed to roll the extra
@@ -23,10 +25,8 @@ tenth frame.
 -->
 
 ---
-title: 'Requirements'
----
 
-## Requirements
+#### The Requirements
 
 ```mermaid
 classDiagram
@@ -36,9 +36,17 @@ classDiagram
     }
 ```
 
-Write a class named <span text-orange v-mark="{at: 1, color: 'orange', type: 'circle'}">`Game`</span> that has two methods
-<span text-orange v-mark="{at: 1, color: 'orange', type: 'circle'}">`roll(pins: number)`</span> is called each time the player rolls a ball. The argument is the number of pins knocked down. <br>
-<span text-orange v-mark="{at: 1, color: 'orange', type: 'circle'}">`score(): number`</span> is called only at the very end of the game.  It returns the total score for that game.
+<div>
+  Write a class named <code class="text-orange">Game</code> that has two methods:
+  <ul>
+    <li><code class="text-orange">roll(pins: number)</code> is called each time the player rolls a ball. The argument is the number of pins knocked down.</li>
+    <li><code class="text-orange">score(): number</code> is called only at the very end of the game.  It returns the total score for that game.</li>
+  </ul>
+</div>
+
+---
+
+#### A Quick Design Session
 
 ---
 layout: center
@@ -76,7 +84,7 @@ direction LR
     class Frame {
     }
 
-    Game "1" --> "10" Frame
+    Game --> "10" Frame
 ```
 
 A game has 10 frames.
@@ -104,11 +112,11 @@ direction LR
         -pins: number
     }
 
-    Game "1" --> "10" Frame
-    Frame "1" --> "1..2" Roll
+    Game --> "10" Frame
+    Frame --> "1..2" Roll
 ```
 
-A frame has 1 or two rolls.
+A frame has 1 or 2 rolls.
 
 </template>
 <template #3>
@@ -136,10 +144,10 @@ direction LR
     class TenthFrame {
     }
 
-    Game "1" --> "10" Frame
-    Frame "1" --> "1..2" Roll
+    Game --> "10" Frame
+    Frame --> "1..2" Roll
     Frame <|-- TenthFrame
-    TenthFrame "1" --> "1" Roll
+    TenthFrame --> "1" Roll
 ```
 
 The score function must iterate through all the frames, and calculate all their scores.
@@ -171,10 +179,10 @@ direction LR
     class TenthFrame {
     }
 
-    Game "1" --> "10" Frame
-    Frame "1" --> "1..2" Roll
+    Game --> "10" Frame
+    Frame --> "1..2" Roll
     Frame <|-- TenthFrame
-    TenthFrame "1" --> "1" Roll
+    TenthFrame  --> "1" Roll
     Frame --> Frame : next frame
 ```
 
