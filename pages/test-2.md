@@ -177,7 +177,7 @@ export class Game {
 }
 ```
 
-```ts {*|*|*}
+```ts {*|*}
 export class Game {
   // ...
   score(): number {

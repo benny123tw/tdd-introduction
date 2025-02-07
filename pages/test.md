@@ -12,7 +12,7 @@ transition: none
       <StatusBar :isPass="true" />
     </template>
     <template #3>
-      <StatusBar :isPass="false" errorMessage="TypeError: game.roll is not a function. (In 'game.roll(0)', 'game.roll' is undefined)" />
+      <StatusBar :isPass="false" errorMessage="TypeError: game.roll is not a function." />
     </template>
     <template #4>
       <StatusBar :isPass="false" errorMessage="Expected: 0, Received: -1" />
@@ -326,12 +326,9 @@ export class Game {
 
 Fix the test
 
-```ts {13-16}
+```ts {10-13}
 export class Game {
-  private rolls: number[] = 
-    Array.from({ length: 21 }, () => 0)
-  private currentRoll = 0
-
+  // code...
   roll(pins: number) {
     this.rolls[this.currentRoll++] = pins
   }
